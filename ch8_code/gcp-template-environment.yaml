@@ -1,0 +1,13 @@
+imports:
+- path: gcp-first-template.py
+
+resources:
+- name: gcp-vm-1
+  type: gcp-first-template.py
+- name: gcp-network
+  type: compute.v1.network
+  properties:
+    machineType: f1-micro # Sets the 'machineType' template property
+    zone: us-east1-b # Sets the 'zone' template property
+    network: gcp-network # Sets the 'network' template property
+    IPv4Range: 10.10.0.1/16
